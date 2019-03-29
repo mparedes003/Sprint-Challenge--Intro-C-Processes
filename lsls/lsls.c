@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <dirent.h>
-// #include <stdlib.h>
+#include <stdlib.h>
 #include <sys/stat.h>
-// #include <string.h>
 
 /**
  * Main
@@ -44,7 +43,7 @@ int main(int argc, char **argv)
       stat(pdirname->d_name, &buf);
       // print a list of all directories
       // with their corresponding file sizes to the left of them
-      printf("%10lld %s\n", buf.st_size, pdirname->d_name);
+      printf("%10ld %s\n", buf.st_size, pdirname->d_name);
     }
   }
   // Close directory
