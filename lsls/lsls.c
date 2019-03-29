@@ -6,6 +6,10 @@
  */
 int main(int argc, char **argv)
 {
+  // struct that finds directory name and serial #
+  struct dirent *pdirname;
+  // initialze a character that stores the value of dirname in a pointer
+  char *dirname;
   // Parse command line
 
   // Open directory
