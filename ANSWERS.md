@@ -13,3 +13,4 @@ When a program forks and the child finishes before the parent, the kernel still 
 A zombie process is created when the child terminates and the parent has not called wait() to destroy it yet. It gets destroyed when the parent calls wait() after the child terminates.
 
 **4. What are some of the benefits of working in a compiled language versus a non-compiled language? More specifically, what benefits are there to be had from taking the extra time to compile our code?**
+A compiler generally runs faster than interpreted code. It doesn't need to work it out on the fly as the application is running. The compiled program will also be checked for errors whilst it is being compiled. If there are any commands that the compiler doesn't like, then they will be reported. This enables us to fix coding errors before getting a fully running program.
