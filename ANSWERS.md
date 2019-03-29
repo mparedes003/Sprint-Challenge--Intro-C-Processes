@@ -10,5 +10,6 @@ Zombie - the process is dead but have not been removed from the process table
 When a program forks and the child finishes before the parent, the kernel still keeps some of its information about the child in case the parent might need it. The parent needs to check the child's exit status. Then the parent calls wait(). When the process is in between the child terminating and the parent calling wait(), the child is in zombie process.
 
 **3. How does a zombie process get created? How does one get destroyed?**
+A zombie process is created when the child terminates and the parent has not called wait() to destroy it yet. It gets destroyed when the parent calls wait() after the child terminates.
 
 **4. What are some of the benefits of working in a compiled language versus a non-compiled language? More specifically, what benefits are there to be had from taking the extra time to compile our code?**
