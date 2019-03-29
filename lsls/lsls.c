@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <dirent.h>
 // #include <stdlib.h>
-// #include <sys/stat.h>
+#include <sys/stat.h>
 // #include <string.h>
 
 /**
@@ -13,6 +13,7 @@ int main(int argc, char **argv)
   struct dirent *pdirname;
   // initialze a character that stores the value of dirname in a pointer
   char *dirname;
+  struct stat buf;
   // Parse command line
   // if argc is greater than or equal to 2
   if (argc >= 2)
@@ -39,8 +40,11 @@ int main(int argc, char **argv)
     // Read the directory entry in opendir to read via dir Struct
     while ((pdirname = readdir(dir)) != NULL)
     {
+      // retrieve all file sizes
+      stat(pdirname->d_name, &buf);
       // print a list of all directories
-      printf("%s\n", pdirname->d_name);
+      // with their corresponding file sizes to the left of them
+      printf("%10lld %s\n", buf.st_size, pdirname->d_name);
     }
   }
   // Close directory
